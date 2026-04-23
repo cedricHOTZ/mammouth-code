@@ -1,0 +1,108 @@
+{
+  "name": "mammouth-code",
+  "displayName": "Mammouth Code",
+  "description": "Agent IA de développement propulsé par Mammouth IA",
+  "version": "0.1.0",
+  "publisher": "mammouth",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["AI", "Other"],
+  "keywords": ["ai", "mammouth", "agent", "code", "assistant"],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "mammouth.openChat",
+        "title": "Mammouth: Ouvrir le chat"
+      },
+      {
+        "command": "mammouth.explainSelection",
+        "title": "Mammouth: Expliquer la sélection"
+      },
+      {
+        "command": "mammouth.fixSelection",
+        "title": "Mammouth: Corriger la sélection"
+      },
+      {
+        "command": "mammouth.newChat",
+        "title": "Mammouth: Nouvelle conversation"
+      }
+    ],
+    "viewsContainers": {
+      "secondarySidebar": [
+        {
+          "id": "mammouth",
+          "title": "Mammouth Code",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "mammouth": [
+        {
+          "type": "webview",
+          "id": "mammouth.chatView",
+          "name": "Chat"
+        }
+      ]
+    },
+    "menus": {
+      "editor/context": [
+        {
+          "command": "mammouth.explainSelection",
+          "when": "editorHasSelection",
+          "group": "mammouth@1"
+        },
+        {
+          "command": "mammouth.fixSelection",
+          "when": "editorHasSelection",
+          "group": "mammouth@2"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "mammouth.openChat",
+        "key": "ctrl+shift+m",
+        "mac": "cmd+shift+m"
+      }
+    ],
+    "configuration": {
+      "title": "Mammouth Code",
+      "properties": {
+        "mammouth.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "Clé API Mammouth IA (mammouth.apiKey)"
+        },
+        "mammouth.model": {
+          "type": "string",
+          "default": "claude-sonnet-4-6",
+          "description": "Modèle à utiliser"
+        },
+        "mammouth.apiEndpoint": {
+          "type": "string",
+          "default": "https://api.mammouth.ai/v1/chat/completions",
+          "description": "Endpoint de l'API Mammouth"
+        },
+        "mammouth.maxTokens": {
+          "type": "number",
+          "default": 8192,
+          "description": "Nombre maximum de tokens par réponse"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.3.0"
+  }
+}
