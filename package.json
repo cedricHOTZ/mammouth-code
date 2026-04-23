@@ -3,7 +3,7 @@
   "displayName": "Mammouth Code",
   "description": "Agent IA de développement propulsé par Mammouth IA",
   "version": "0.1.0",
-  "publisher": "mammouth",
+  "publisher": "domoweb",
   "engines": {
     "vscode": "^1.85.0"
   },
