@@ -6,18 +6,51 @@ Mammouth Code vous permet de dialoguer avec une IA directement dans votre édite
 
 ---
 
-## Fonctionnalités
+## Installation
 
-### Chat intégré
-- Panneau de conversation dans la barre latérale
-- Raccourci clavier : `Ctrl+Shift+M` (ou `Cmd+Shift+M` sur Mac)
-- Nouvelle conversation via `Mammouth: Nouvelle conversation`
+1. Ouvrez VSCode
+2. Allez dans l'onglet Extensions (`Ctrl+Shift+X`)
+3. Cherchez **Mammouth Code**
+4. Cliquez **Installer**
 
-### Commandes sur la sélection (clic droit)
-- **Expliquer la sélection** — L'agent explique le code sélectionné
-- **Corriger la sélection** — L'agent propose une correction du code sélectionné
+---
 
-### Outils de l'agent
+## Configuration
+
+Avant de commencer, vous devez entrer votre clé API :
+
+1. Ouvrez les paramètres VSCode (`Ctrl+,`)
+2. Cherchez **mammouth**
+3. Renseignez votre clé dans le champ `mammouth.apiKey`
+
+Obtenez votre clé API sur [mammouth.ai](https://mammouth.ai).
+
+| Paramètre | Description | Valeur par défaut |
+|---|---|---|
+| `mammouth.apiKey` | **Obligatoire** — Votre clé API Mammouth | _(vide)_ |
+| `mammouth.model` | Modèle IA à utiliser | `claude-sonnet-4-6` |
+| `mammouth.apiEndpoint` | URL de l'API | `https://api.mammouth.ai/v1/chat/completions` |
+| `mammouth.maxTokens` | Nombre maximum de tokens par réponse | `8192` |
+
+---
+
+## Utilisation
+
+### Ouvrir le chat
+
+- Cliquez sur l'icône **Mammouth** dans la barre latérale
+- Ou utilisez le raccourci `Ctrl+Shift+M` (`Cmd+Shift+M` sur Mac)
+- Pour recommencer une nouvelle conversation : `Ctrl+Shift+P` → **Mammouth: Nouvelle conversation**
+
+### Expliquer ou corriger du code
+
+1. Sélectionnez du code dans l'éditeur
+2. Faites un clic droit
+3. Choisissez :
+   - **Mammouth: Expliquer la sélection** — l'agent explique ce que fait le code
+   - **Mammouth: Corriger la sélection** — l'agent propose une correction
+
+### Ce que l'agent peut faire
 
 | Outil | Description |
 |---|---|
@@ -33,61 +66,9 @@ Mammouth Code vous permet de dialoguer avec une IA directement dans votre édite
 
 ---
 
-## Installation depuis le Marketplace
-
-1. Ouvrez VSCode
-2. Allez dans l'onglet Extensions (`Ctrl+Shift+X`)
-3. Cherchez **Mammouth Code**
-4. Cliquez **Installer**
-
----
-
-## Configuration
-
-Ouvrez les paramètres VSCode (`Ctrl+,`) et cherchez **mammouth** :
-
-| Paramètre | Description | Valeur par défaut |
-|---|---|---|
-| `mammouth.apiKey` | **Obligatoire** — Votre clé API Mammouth | _(vide)_ |
-| `mammouth.model` | Modèle IA à utiliser | `claude-sonnet-4-6` |
-| `mammouth.apiEndpoint` | URL de l'API | `https://api.mammouth.ai/v1/chat/completions` |
-| `mammouth.maxTokens` | Nombre maximum de tokens par réponse | `8192` |
-
-Obtenez votre clé API sur [mammouth.ai](https://mammouth.ai).
-
----
-
-## Installation en développement
-
-```bash
-# 1. Cloner le dépôt
-git clone https://github.com/domoweb/mammouth-code.git
-cd mammouth-code
-
-# 2. Installer les dépendances
-npm install
-
-# 3. Compiler
-npm run compile
-
-# 4. Lancer l'extension en mode développement
-# Appuyez sur F5 dans VSCode (ouvre une fenêtre de débogage)
-# ou : Ctrl+Shift+P → "Debug: Start Debugging"
-```
-
-## Packaging
-
-```bash
-npm install -g @vscode/vsce
-vsce package
-# → génère mammouth-code-0.1.0.vsix
-```
-
----
-
 ## Éditeur
 
-Développé par **[domoweb](https://github.com/domoweb)**.
+Développé par **[domoweb]**.
 
 ## Licence
 
