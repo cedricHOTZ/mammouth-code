@@ -68,7 +68,7 @@ Obtenez votre clé API sur [mammouth.ai](https://mammouth.ai).
 
 ## Éditeur
 
-Développé par **[domoweb]**.
+Développé par **[Cédric]**.
 
 ## Licence
 
